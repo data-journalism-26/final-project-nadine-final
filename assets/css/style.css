@@ -5,7 +5,7 @@
     --text: #111111;
     --muted: #6f6a66;
     --caption: #77716c;
-    --line: #d8d2cc;
+    --line: #cfcfcf;
     --soft-line: #ece7e1;
     --accent: #d84f8f;
     --accent-dark: #9f1f63;
@@ -15,8 +15,8 @@
     --soft: #f3efe8;
     --black: #1f1f1f;
     --figure-bg: var(--paper);
-    --measure: 860px;
-    --wide: 1180px;
+    --measure: 780px;
+    --wide: 1080px;
 }
 
 * {
@@ -37,7 +37,7 @@ body {
 }
 
 a {
-    color: var(--accent-dark);
+    color: inherit;
     text-decoration-color: rgba(216, 79, 143, 0.45);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.15em;
@@ -326,6 +326,11 @@ figcaption {
     text-transform: uppercase;
 }
 
+.quote-line a:hover,
+.quote-line a:focus {
+    color: var(--accent);
+}
+
 @keyframes quoteWalk {
     from {
         transform: translateX(0);
@@ -570,13 +575,6 @@ figcaption a {
 .split-tooltip span {
     color: var(--caption);
     display: block;
-}
-
-.split-instruction {
-    color: var(--caption);
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 0.78rem;
-    margin: 8px 0 0;
 }
 
 .types-chart {
@@ -1065,7 +1063,7 @@ figcaption a:focus {
 .crash-option,
 .crash-reveal {
     background: transparent;
-    border: 1px solid var(--rule);
+    border: 1px solid #cfcfcf;
     border-radius: 0;
     color: var(--ink);
     cursor: pointer;
@@ -1110,9 +1108,9 @@ figcaption a:focus {
 }
 
 .crash-reveal:disabled {
-    background: #ded8d2;
-    border-color: #ded8d2;
-    color: #8a817b;
+    background: #e0e0e0;
+    border-color: #e0e0e0;
+    color: #777777;
     cursor: default;
 }
 

@@ -94,7 +94,6 @@ function renderSplitIndexChart() {
             <text x="${x(2025) + 24}" y="${y(lastDatum.all) + 24}" font-size="17" fill="#151515">-18.6%</text>
         </svg>
         <div class="split-tooltip" aria-hidden="true"></div>
-        <p class="split-instruction">Hover or tap a line to see the year-by-year index value.</p>
     `;
 
     if (fallback) {
