@@ -1,6 +1,6 @@
 # Spring on Two Wheels
 
-**Final project — Data Journalism, MDS, Spring 2026**  
+**Final Project — Data Journalism (MDS)**  
 **Author:** Nadine Daum  
 **Date:** 19 May 2026  
 
@@ -20,7 +20,7 @@ The final article is:
 spring-on-two-wheels.html
 ```
 
-It includes three original visual elements:
+It includes three original visualizations:
 
 - Figure 1: overall road deaths and cyclist deaths indexed to 2015;
 - Figure 2: the changing fatality mix between conventional bicycles and pedelec users;
@@ -28,19 +28,11 @@ It includes three original visual elements:
 
 ## Data sources
 
-The project uses:
-
 - **Destatis** traffic accident statistics for national road deaths and cyclist fatalities;
 - **Destatis press release PD26_N025_461** for 2025 cyclist, age and crash-context figures;
 - **Unfallatlas / MFDZ open data** for Berlin bicycle-involved injury crashes in 2024;
 - **Fahrrad-Unfallorte** as a public-facing reference for Berlin crash-type categories;
 - **Open-Meteo / DWD API** for the practical weather card.
-
-A local source registry is stored in:
-
-```text
-data/raw/source_registry.json
-```
 
 ## Reproducibility
 
@@ -58,13 +50,6 @@ python scripts/run_pipeline.py
 
 The pipeline downloads or reads the raw sources, cleans the data, creates chart-ready files, and exports the figures used in the article.
 
-Open the article locally:
-
-```bash
-open spring-on-two-wheels.html
-```
-
-On systems without the `open` command, open `spring-on-two-wheels.html` manually in a browser.
 
 ## Repository structure
 
