@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-05-18T18:20:00+00:00",
+  "sources": {
+    "destatis_traffic_deaths_annual.csv": {
+      "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Verkehrsunfaelle/_Grafik/_Interaktiv/Daten/verkehrsunfaelle-getoetete-jahr.csv?__blob=value&v=20",
+      "description": "Annual road traffic deaths in Germany (Destatis interactive data).",
+      "status": "downloaded (1325 bytes)",
+      "present_locally": "True"
+    },
+    "destatis_cyclist_fatalities_2015_2025.csv": {
+      "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/Grafiken/Newsroom/2026/Interaktiv/Daten/20260427-fahrradunfaelle.csv?__blob=value&v=1",
+      "description": "Cyclist fatalities by type (total, bicycle without motor, pedelec).",
+      "status": "downloaded (266 bytes)",
+      "present_locally": "True"
+    },
+    "destatis_press_release_pd26_n025_461.html": {
+      "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/04/PD26_N025_461.html",
+      "description": "Press release containing age-65+ shares and bicycle crash context statements.",
+      "status": "downloaded (77506 bytes)",
+      "present_locally": "True"
+    },
+    "unfallatlas_mfdz_body.zip": {
+      "url": "https://data.mfdz.de/destatis_Unfalldaten/body.zip",
+      "description": "Unfallatlas open data bundle with point-level road crashes with personal injury, 2016-2024.",
+      "status": "downloaded (47568467 bytes)",
+      "present_locally": "True"
+    }
+  }
+}

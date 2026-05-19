@@ -1,0 +1,8 @@
+crash_type_code,count,label,is_highlight
+2,1408,Turning crash,True
+3,1145,Crossing or entering crash,True
+5,573,Parked-vehicle crash,False
+6,514,Same-direction traffic crash,False
+7,320,Other crash,False
+1,299,Riding crash,False
+4,193,Pedestrian crossing crash,False

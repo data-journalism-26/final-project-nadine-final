@@ -1,0 +1,1526 @@
+:root {
+    --bg: #fbfaf7;
+    --paper: #ffffff;
+    --ink: #111111;
+    --text: #111111;
+    --muted: #6f6a66;
+    --caption: #77716c;
+    --line: #d8d2cc;
+    --soft-line: #ece7e1;
+    --accent: #d84f8f;
+    --accent-dark: #9f1f63;
+    --accent-soft: #fde8f1;
+    --page: var(--bg);
+    --rule: var(--line);
+    --soft: #f3efe8;
+    --black: #1f1f1f;
+    --figure-bg: var(--paper);
+    --measure: 860px;
+    --wide: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+a {
+    color: var(--accent-dark);
+    text-decoration-color: rgba(216, 79, 143, 0.45);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.story {
+    padding-bottom: 72px;
+    position: relative;
+}
+
+.section-hero {
+    border-bottom: 1px solid var(--ink);
+    color: #ffffff;
+    margin-bottom: 52px;
+    min-height: 64vh;
+    overflow: hidden;
+    padding: 28px max(24px, calc((100vw - var(--wide)) / 2 + 24px)) 44px;
+    position: relative;
+}
+
+.section-hero::after {
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0.18) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.46) 100%);
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.hero-image {
+    filter: saturate(0.92) brightness(0.78);
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    object-position: center 48%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
+    max-width: none;
+    min-height: calc(64vh - 72px);
+    position: relative;
+    z-index: 2;
+}
+
+.kicker,
+.hero-meta,
+.source {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+figcaption {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.kicker {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.78);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+    margin: 0 0 34px;
+    padding-bottom: 12px;
+    font-variant-caps: small-caps;
+    text-transform: none;
+}
+
+.hero-title {
+    font-size: clamp(4.1rem, 8.7vw, 7.7rem);
+    letter-spacing: -0.04em;
+    line-height: 1.14;
+    margin: 0 0 24px;
+    max-width: 920px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28);
+}
+
+.hero-lower {
+    border-top: 1px solid rgba(255, 255, 255, 0.48);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 22px;
+}
+
+.hero-copy {
+    max-width: 760px;
+}
+
+.hero-deck {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.02rem, 1.55vw, 1.22rem);
+    line-height: 1.42;
+    margin: 0;
+    max-width: 620px;
+}
+
+.hero-meta {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.45;
+    margin: 4px 0 0;
+    text-transform: uppercase;
+}
+
+.photo-credit {
+    bottom: 12px;
+    color: rgba(255, 255, 255, 0.68);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 0.68rem;
+    margin: 0;
+    position: absolute;
+    right: 16px;
+    z-index: 2;
+}
+
+.story>section:not(.section-hero) {
+    margin: 0 auto 4.5rem;
+    max-width: var(--wide);
+    padding: 0 24px;
+}
+
+.story>.figure-section {
+    border-top: 0;
+    margin-top: 3rem;
+    max-width: var(--wide);
+    padding-top: 3.5rem;
+}
+
+.story>.cyclist-types-section {
+    max-width: var(--measure);
+}
+
+.story>.context-section {
+    max-width: var(--wide);
+    padding-bottom: 4.5rem;
+    padding-top: 4.5rem;
+}
+
+.story>.weather-panel,
+.story>.method-note {
+    max-width: var(--wide);
+}
+
+.article-lede p {
+    color: var(--ink);
+    font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+    line-height: 1.55;
+    max-width: var(--measure);
+}
+
+.story>section:not(.section-hero):not(.figure-section):not(.context-section):not(.weather-panel):not(.method-note)>p {
+    color: var(--ink);
+    font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+    line-height: 1.55;
+    max-width: var(--measure);
+}
+
+.story p {
+    color: var(--ink);
+}
+
+.section-hero .kicker {
+    color: var(--accent);
+}
+
+.section-hero .hero-deck {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.section-hero .hero-meta {
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.section-hero .photo-credit {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.section-header {
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    margin-bottom: 0.5rem;
+}
+
+.section-deck {
+    color: var(--caption);
+    font-size: clamp(1.25rem, 2vw, 1.7rem);
+    line-height: 1.35;
+    margin: 0;
+    max-width: 820px;
+}
+
+.quote-walk {
+    border-bottom: 1px solid var(--rule);
+    border-top: 1px solid var(--rule);
+    margin: 18px 0 28px;
+    overflow: hidden;
+    padding: 16px 0 12px;
+    position: relative;
+}
+
+.quote-walk::before,
+.quote-walk::after {
+    content: "";
+    inset: 0 auto 0 0;
+    pointer-events: none;
+    position: absolute;
+    width: 64px;
+    z-index: 2;
+}
+
+.quote-walk::before {
+    background: linear-gradient(90deg, var(--page), rgba(255, 255, 255, 0));
+}
+
+.quote-walk::after {
+    background: linear-gradient(270deg, var(--page), rgba(255, 255, 255, 0));
+    left: auto;
+    right: 0;
+}
+
+.quote-line {
+    animation: quoteWalk 58s linear infinite;
+    display: flex;
+    gap: 42px;
+    min-width: max-content;
+    width: max-content;
+    will-change: transform;
+}
+
+.quote-line:hover {
+    animation-play-state: paused;
+}
+
+.quote-track {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 42px;
+    min-width: max-content;
+}
+
+.quote-line span {
+    color: #3a3a3a;
+    font-size: clamp(1rem, 1.7vw, 1.18rem);
+    font-style: italic;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+.quote-line a {
+    color: var(--accent-dark);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 0.68em;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 0.4em;
+    text-decoration-thickness: 1px;
+    text-transform: uppercase;
+}
+
+@keyframes quoteWalk {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 21px));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quote-line {
+        animation: none;
+        display: block;
+        min-width: 0;
+        width: auto;
+    }
+
+    .quote-track {
+        display: grid;
+        gap: 10px;
+        min-width: 0;
+    }
+
+    .quote-track[aria-hidden="true"] {
+        display: none;
+    }
+
+    .quote-line span {
+        white-space: normal;
+    }
+
+    .composition-segment {
+        transition: none;
+    }
+}
+
+h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+    margin: 0 0 1.4rem;
+}
+
+/* Figure titles: less dramatic, more functional */
+figure h2,
+figure h3,
+.types-chart h3,
+.age-chart h3 {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    color: var(--black);
+    margin: 0 0 10px;
+}
+
+figure h2,
+.figure-title,
+figure h3 {
+    font-size: 1rem;
+    line-height: 1.15;
+}
+
+p {
+    margin: 0 0 22px;
+}
+
+figure {
+    background: var(--figure-bg);
+    border-top: 0;
+    margin: 0 0 3rem;
+    max-width: var(--wide);
+    padding: 0;
+    width: 100%;
+}
+
+/* tone down figcaption and related labels so captions don't compete with body text */
+figcaption {
+    color: var(--caption);
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+figcaption a {
+    color: var(--accent-dark);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    font-weight: 500;
+}
+
+.figure-wrap {
+    border-bottom: 0;
+    min-height: 0;
+    padding-bottom: 0;
+}
+
+.article-figure {
+    height: auto;
+    margin: 0 auto;
+    max-height: 620px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.split-chart {
+    display: none;
+    position: relative;
+}
+
+.split-chart.is-ready {
+    display: block;
+}
+
+.split-chart svg {
+    display: block;
+    height: auto;
+    overflow: visible;
+    width: 100%;
+}
+
+.split-chart text {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.split-chart .grid-line {
+    stroke: #dddddd;
+    stroke-width: 0.7;
+}
+
+.split-chart .axis-line {
+    stroke: var(--ink);
+    stroke-width: 1.1;
+}
+
+.split-chart .baseline {
+    stroke: #9a9a9a;
+    stroke-dasharray: 4 5;
+    stroke-width: 1.1;
+}
+
+.split-chart .period-band {
+    fill: #f7d6e6;
+    opacity: 0.55;
+}
+
+.split-chart .series-line {
+    fill: none;
+    transition: opacity 160ms ease, stroke-width 160ms ease;
+}
+
+.split-chart .line-hit {
+    cursor: pointer;
+    fill: none;
+    pointer-events: stroke;
+    stroke: transparent;
+    stroke-linecap: round;
+    stroke-width: 18;
+}
+
+.split-chart .series-muted {
+    stroke: var(--black);
+    stroke-width: 1.6;
+}
+
+.split-chart .series-accent {
+    stroke: var(--accent);
+    stroke-width: 3;
+}
+
+.split-chart .point {
+    cursor: pointer;
+    transition: r 160ms ease, opacity 160ms ease;
+}
+
+.split-chart .point-muted {
+    fill: var(--page);
+    stroke: var(--black);
+    stroke-width: 1.6;
+}
+
+.split-chart .point-accent {
+    fill: var(--page);
+    stroke: var(--accent);
+    stroke-width: 2.2;
+}
+
+.split-chart .end-point {
+    fill: var(--accent);
+    stroke: var(--page);
+    stroke-width: 2;
+}
+
+.split-chart.is-hovering .series-line,
+.split-chart.is-hovering .point {
+    opacity: 0.24;
+}
+
+.split-chart.is-hovering .is-active {
+    opacity: 1;
+}
+
+.split-chart.is-hovering .series-line.is-active {
+    stroke-width: 4;
+}
+
+.split-tooltip {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #cccccc;
+    box-shadow: 0 10px 24px rgba(18, 18, 18, 0.12);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 0.82rem;
+    left: 0;
+    line-height: 1.35;
+    max-width: 220px;
+    opacity: 0;
+    padding: 10px 12px;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, calc(-100% - 14px));
+    transition: opacity 120ms ease;
+    z-index: 3;
+}
+
+.split-chart .chart-small-text {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.split-tooltip.is-visible {
+    opacity: 1;
+}
+
+.split-tooltip strong {
+    display: block;
+    font-size: 0.86rem;
+    margin-bottom: 3px;
+}
+
+.split-tooltip span {
+    color: var(--caption);
+    display: block;
+}
+
+.split-instruction {
+    color: var(--caption);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 0.78rem;
+    margin: 8px 0 0;
+}
+
+.types-chart {
+    background: #ffffff;
+    display: none;
+    padding: 26px 28px 22px;
+}
+
+.types-chart.is-ready {
+    display: block;
+}
+
+.types-chart-header {
+    align-items: start;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    margin-bottom: 24px;
+}
+
+.types-chart h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 8px;
+}
+
+.types-chart p {
+    color: var(--caption);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    margin: 0;
+    max-width: 620px;
+}
+
+.types-year {
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(2.6rem, 7vw, 4.8rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+    text-align: right;
+}
+
+.types-summary-panel {
+    min-width: 230px;
+    text-align: right;
+}
+
+.types-bars {
+    margin: 12px 0 18px;
+}
+
+.summary-total {
+    color: #333333;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(1.15rem, 2.3vw, 1.55rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: 10px;
+}
+
+.summary-share {
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(1.55rem, 3.4vw, 2.35rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+    margin-top: 4px;
+}
+
+.composition-bar {
+    background: #e6e6e6;
+    display: flex;
+    height: 42px;
+    overflow: hidden;
+    position: relative;
+}
+
+.composition-segment {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0 12px;
+    transition: width 480ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    width: 0;
+}
+
+.segment-bicycle {
+    background: #dedede;
+    color: var(--ink);
+}
+
+.segment-pedelec {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.segment-text {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1.15;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.types-slider-wrap {
+    align-items: center;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.types-slider-wrap label,
+.types-slider-wrap output {
+    color: #8a8a8a;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 0.74rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    text-transform: none;
+}
+
+.types-slider {
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+}
+
+.types-slider::-webkit-slider-runnable-track {
+    background: #d8d8d8;
+    border: 0;
+    border-radius: 999px;
+    height: 4px;
+}
+
+.types-slider::-webkit-slider-thumb {
+    appearance: none;
+    background: var(--black);
+    border: 0;
+    border-radius: 50%;
+    box-shadow: none;
+    height: 14px;
+    margin-top: -5px;
+    width: 14px;
+}
+
+.types-slider::-moz-range-track {
+    background: #d8d8d8;
+    border: 0;
+    border-radius: 999px;
+    height: 4px;
+}
+
+.types-slider::-moz-range-progress {
+    background: #d8d8d8;
+}
+
+.types-slider::-moz-range-thumb {
+    background: var(--black);
+    border: 0;
+    border-radius: 50%;
+    box-shadow: none;
+    height: 14px;
+    width: 14px;
+}
+
+.age-chart {
+    --label-width: 190px;
+    --value-width: 76px;
+    background: #ffffff;
+    display: none;
+    padding: 26px 28px 24px;
+}
+
+.age-chart.is-ready {
+    display: block;
+}
+
+.age-chart h3 {
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 8px;
+}
+
+.age-chart p {
+    color: var(--caption);
+    font-size: 0.96rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.age-plot {
+    margin-top: 28px;
+    position: relative;
+}
+
+.age-row {
+    align-items: center;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: var(--label-width) minmax(0, 1fr) var(--value-width);
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.age-label {
+    color: #444444;
+    font-size: 1.02rem;
+    line-height: 1.2;
+}
+
+.age-track {
+    background: #e8e8e8;
+    display: flex;
+    height: 24px;
+    overflow: hidden;
+}
+
+.age-bar {
+    height: 100%;
+    transition: width 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    width: 0;
+}
+
+.age-chart.is-visible .age-bar {
+    width: var(--bar-width);
+}
+
+.age-under {
+    background: #d7d7d7;
+}
+
+.age-value {
+    color: #444444;
+    font-size: 1.02rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 360ms ease 520ms;
+}
+
+.age-chart.is-visible .age-value {
+    opacity: 1;
+}
+
+.age-bar-conventional {
+    background: var(--accent-dark);
+}
+
+.age-bar-all {
+    background: var(--black);
+}
+
+.age-bar-pedelec {
+    background: var(--accent);
+}
+
+.age-legend {
+    border-top: 1px solid var(--rule);
+    display: flex;
+    gap: 18px;
+    margin-top: 4px;
+    padding-top: 12px;
+}
+
+.age-legend span {
+    align-items: center;
+    color: var(--caption);
+    display: inline-flex;
+    font-size: 0.84rem;
+    gap: 6px;
+}
+
+.age-legend span::before {
+    content: "";
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+}
+
+.age-legend .legend-under::before {
+    background: #d7d7d7;
+}
+
+.age-legend .legend-over::before {
+    background: var(--accent);
+}
+
+.age-note {
+    color: #333333 !important;
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    margin-top: 14px !important;
+    padding-top: 14px;
+}
+
+@media (max-width: 760px) {
+    .types-chart {
+        padding: 18px 12px 18px;
+    }
+
+    .types-chart-header {
+        display: block;
+    }
+
+    .types-year {
+        margin-top: 12px;
+        text-align: left;
+    }
+
+    .types-summary-panel {
+        min-width: 0;
+        text-align: left;
+    }
+
+    .composition-bar {
+        height: 56px;
+    }
+
+    .composition-segment {
+        padding: 0 8px;
+    }
+
+    .segment-text {
+        font-size: 0.76rem;
+    }
+
+    .types-slider-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .age-chart {
+        --label-width: 1fr;
+        --value-width: 64px;
+        padding: 18px 12px;
+    }
+
+    .age-row {
+        grid-template-columns: 1fr var(--value-width);
+        gap: 8px;
+    }
+
+    .age-label {
+        grid-column: 1 / -1;
+    }
+
+    .age-track {
+        height: 22px;
+    }
+
+}
+
+figcaption {
+    color: var(--caption);
+    font-size: 0.98rem;
+    line-height: 1.45;
+    margin-top: 14px;
+    max-width: var(--measure);
+}
+
+/* Use the same accent color as the quote strip links for figure-source hyperlinks */
+figcaption a {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+
+figcaption a:hover,
+figcaption a:focus {
+    color: var(--accent);
+}
+
+.figure-caveat {
+    border-left: 3px solid var(--rule);
+    color: #444444;
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin: -34px auto 42px;
+    max-width: var(--measure);
+    padding-left: 16px;
+}
+
+.figure-bridge {
+    color: var(--ink);
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    line-height: 1.55;
+    margin: 0 auto 1rem;
+    max-width: var(--measure);
+}
+
+.figure-section h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    max-width: 900px;
+    margin-bottom: 0.55rem;
+}
+
+.figure-subhead {
+    color: var(--ink);
+    font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    max-width: 900px;
+}
+
+.section-lede {
+    color: var(--caption);
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    line-height: 1.55;
+    max-width: var(--measure);
+}
+
+.context-label {
+    color: var(--accent-dark);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.context-section {
+    border-top: 0;
+}
+
+.context-section h2 {
+    margin-bottom: 1.6rem;
+    max-width: 760px;
+}
+
+.context-section p {
+    color: var(--ink);
+    font-size: clamp(1.15rem, 1.7vw, 1.35rem);
+    line-height: 1.58;
+    margin-bottom: 0;
+    max-width: var(--measure);
+}
+
+.context-section p+p {
+    margin-top: 1.4rem;
+}
+
+.crash-type-wrap {
+    background: var(--figure-bg);
+}
+
+.crash-type-figure {
+    display: block;
+    max-height: none;
+}
+
+.crash-prompt {
+    border: 1px solid var(--rule);
+    margin: 2rem 0 2.4rem;
+    padding: clamp(1.4rem, 2.4vw, 2rem);
+}
+
+.crash-prompt-question {
+    color: var(--ink);
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.35;
+    margin: 0 0 1rem;
+    max-width: 760px;
+}
+
+.crash-options {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 1.2rem;
+}
+
+.crash-option,
+.crash-reveal {
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 0;
+    color: var(--ink);
+    cursor: pointer;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: clamp(0.95rem, 1.25vw, 1.08rem);
+    font-weight: 700;
+    line-height: 1.15;
+    min-height: 58px;
+    padding: 0.75rem 0.9rem;
+    width: 100%;
+}
+
+.crash-option:hover,
+.crash-option.is-selected {
+    border-color: var(--accent);
+}
+
+.crash-option.is-selected {
+    background: var(--accent-soft);
+}
+
+.crash-option.is-revealed[data-correct="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--ink);
+}
+
+.crash-option.is-revealed.is-selected[data-correct="false"] {
+    background: transparent;
+    border-color: var(--soft-line);
+    color: var(--caption);
+}
+
+.crash-option.is-revealed:not([data-correct="true"]):not(.is-selected) {
+    opacity: 0.58;
+}
+
+.crash-reveal {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #ffffff;
+}
+
+.crash-reveal:disabled {
+    background: #ded8d2;
+    border-color: #ded8d2;
+    color: #8a817b;
+    cursor: default;
+}
+
+.crash-result {
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.45;
+    margin: 1rem 0 0;
+    max-width: 780px;
+}
+
+.source {
+    color: var(--caption);
+    font-size: 0.78rem;
+    margin-bottom: 0;
+}
+
+.method-note {
+    border-top: 0;
+    color: var(--caption);
+    margin-top: 5rem;
+    padding: 2rem 0;
+}
+
+.method-note h2 {
+    color: var(--ink);
+    font-size: 1.4rem;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.method-note-grid {
+    display: grid;
+    gap: clamp(2rem, 4vw, 4rem);
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+}
+
+.method-note h3 {
+    color: var(--accent-dark);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    margin: 0 0 0.6rem;
+    text-transform: uppercase;
+}
+
+.method-note p {
+    color: var(--caption);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.ending-quote {
+    border-left: 4px solid var(--accent);
+    margin: 0;
+    padding-left: 18px;
+}
+
+.ending-quote p {
+    color: var(--accent-dark);
+    font-size: clamp(1.8rem, 5vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    margin-bottom: 10px;
+}
+
+.ending-quote cite {
+    color: var(--caption);
+    display: block;
+    font-style: normal;
+    font-size: 0.9rem;
+    line-height: 1.35;
+}
+
+.ending-quote a,
+.weather-source {
+    color: var(--accent-dark);
+    font-weight: 700;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}
+
+.weather-panel {
+    align-items: start;
+    border-top: 0;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1.2fr;
+    margin-top: 4rem;
+    max-width: var(--wide);
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.weather-panel-label {
+    color: var(--accent-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.weather-panel h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+.weather-panel-note {
+    color: var(--caption);
+    font-size: 0.94rem;
+    line-height: 1.45;
+    margin-top: 1rem;
+}
+
+.weather-widget {
+    background: transparent;
+    border: 1px solid rgba(216, 79, 143, 0.35);
+    color: var(--ink);
+    padding: 1.4rem;
+}
+
+.weather-main {
+    align-items: end;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.weather-place {
+    color: var(--accent-dark);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+}
+
+.weather-now {
+    color: var(--caption);
+    font-size: 0.96rem;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.weather-temp {
+    color: var(--black);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+}
+
+.weather-days {
+    border-top: 1px solid rgba(216, 79, 143, 0.2);
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-top: 12px;
+}
+
+.weather-days div {
+    border-right: 1px solid rgba(216, 79, 143, 0.2);
+    padding-right: 10px;
+}
+
+.weather-days div:last-child {
+    border-right: 0;
+}
+
+.weather-days span {
+    color: var(--caption);
+    display: block;
+    font-size: 0.78rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.weather-days strong {
+    color: var(--black);
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.1;
+}
+
+.weather-ride-note {
+    border-top: 1px solid rgba(216, 79, 143, 0.2);
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 14px 0 12px;
+    padding-top: 12px;
+}
+
+.story-footer {
+    border-top: 1px solid var(--rule);
+    margin: 72px auto 0;
+    max-width: var(--wide);
+    padding: 28px 24px 0;
+}
+
+.story-footer h2 {
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    letter-spacing: -0.035em;
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+.more-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.more-card {
+    border-top: 1px solid var(--rule);
+    color: var(--ink);
+    display: block;
+    min-height: 0;
+    padding-top: 1rem;
+    text-decoration: none;
+    transition: background 160ms ease, color 160ms ease;
+}
+
+.more-card:hover {
+    background: transparent;
+    color: var(--accent-dark);
+}
+
+.more-label {
+    color: var(--accent-dark);
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+}
+
+.more-card strong {
+    display: block;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+}
+
+.more-card span:last-child {
+    color: var(--caption);
+    display: block;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.end-mark {
+    border-top: 1px solid var(--rule);
+    margin-top: 42px;
+    padding: 20px 0 0;
+    text-align: center;
+}
+
+.end-mark p {
+    color: var(--caption);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.end-mark strong {
+    color: var(--accent-dark);
+    display: block;
+    font-size: clamp(1.8rem, 5vw, 3.8rem);
+    letter-spacing: -0.05em;
+    line-height: 0.95;
+}
+
+@media (max-width: 760px) {
+    body {
+        font-size: 17px;
+    }
+
+    .section-hero {
+        margin-bottom: 38px;
+        min-height: 62vh;
+        padding: 20px 18px 34px;
+    }
+
+    .hero-content {
+        min-height: calc(62vh - 54px);
+    }
+
+    .hero-image {
+        object-position: 58% center;
+    }
+
+    .kicker {
+        margin-bottom: 26px;
+    }
+
+    .hero-title {
+        font-size: clamp(3.2rem, 13vw, 5.2rem);
+        line-height: 1.12;
+    }
+
+    .hero-lower {
+        display: block;
+    }
+
+    .hero-meta {
+        margin-top: 18px;
+    }
+
+    .story>section:not(.section-hero) {
+        margin-bottom: 32px;
+        padding: 0 18px;
+    }
+
+    figure {
+        margin: 0 auto 2.5rem;
+        padding: 0;
+        width: 100%;
+    }
+
+    .article-figure {
+        max-height: none;
+    }
+
+    .story-footer {
+        margin-top: 52px;
+        padding: 24px 18px 0;
+    }
+
+    .more-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .more-card {
+        min-height: 0;
+    }
+
+    .weather-panel {
+        display: block;
+        margin-top: 48px;
+        padding-bottom: 2.5rem;
+        padding-top: 2.5rem;
+    }
+
+    .weather-widget {
+        margin-top: 22px;
+    }
+
+    .weather-days {
+        grid-template-columns: 1fr;
+    }
+
+    .weather-days div {
+        border-right: 0;
+        border-bottom: 1px solid rgba(216, 79, 143, 0.2);
+        padding: 10px 0;
+    }
+
+    .weather-days div:last-child {
+        border-bottom: 0;
+    }
+
+    .method-note-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1100px) {
+    .more-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .crash-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .method-note-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+    .hero-title {
+        font-size: clamp(3.6rem, 11vw, 6rem);
+        line-height: 1.12;
+    }
+}
+
+@media (max-width: 700px) {
+    .more-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .crash-options {
+        grid-template-columns: 1fr;
+    }
+}
